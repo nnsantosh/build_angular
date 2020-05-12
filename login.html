@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+	 <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.min.css}"/> 
+    	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+        <title>Login</title>
+    </head>
+  
+    <body>
+    <app-root>
+
+    </app-root>
+        <div class="container">
+            <div class="top-content">
+
+                <div class="inner-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2 text-center">
+                                <img src="images/login-logo.png" alt="logo"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3 form-box">
+                                <p th:if="${param.logout}" class="alert"><b>You have been logged out</b></p>
+                                <p th:if="${param.error}" class="alert alert-error"><b>There was an error, please try again</b></p>
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h1>Login</h1>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                    <form name="form" th:action="@{/login}" action="/login" method="POST" class="login-form">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-username">Username</label>
+                                            <input id = "input" type="text" name="username" value="" placeholder="username" class="form-username form-control"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-password">Password</label>
+                                            <input type="password" id = "password" name="password" placeholder="password" class="form-password form-control"/>
+                                        </div>
+                                        <button type="submit" id="login" value="Login" class="btn">Sign in</button>
+                                    </form>
+                                    <div class="col-xs-12 forgot-link text-center">
+                                        <!-- <a href="#">Forgot password?</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>
