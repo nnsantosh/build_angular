@@ -1,0 +1,25 @@
+<build>
+        <resources>
+            <resource>
+                <directory>./src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>./src/main/webapp</directory>
+                <targetPath>META-INF/resources</targetPath>
+            </resource>
+            <resource>
+                <directory>./src/main/webapp/static</directory>
+                <targetPath>templates</targetPath>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <layout>ZIP</layout>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
